@@ -5,14 +5,18 @@ const {resolve} = require('path');
 const fileUpload = require('express-fileupload');
 const ColorThief = require('colorthief');
 const fs = require('fs');
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3001;
+}
 
 
 //middleware
 app.use(cors());
 app.use(fileUpload());
 
-app.listen(8000, () => {
-    console.log("Server is starting on port 8000");
+app.listen(port, () => {
+    console.log("Server is starting on port ", port);
 });
 
 // ROUTES //
