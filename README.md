@@ -1,0 +1,1 @@
+change 'git+ssh' to 'git+https' if build fails
